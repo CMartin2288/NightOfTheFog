@@ -20,8 +20,7 @@ public class PlayerMove : MonoBehaviour
     Vector3 move;
 
     Rigidbody rb;
-    
-    // Start is called before the first frame update
+
     void Start()
     {
         Cursor.visible = false;
@@ -54,4 +53,5 @@ public class PlayerMove : MonoBehaviour
         move = move.normalized * speed;
         rb.velocity = move;
     }
+
 }
