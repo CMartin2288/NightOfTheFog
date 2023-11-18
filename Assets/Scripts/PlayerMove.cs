@@ -51,6 +51,7 @@ public class PlayerMove : MonoBehaviour
     {
         move = orientation.forward*vert + orientation.right*hori;
         move = move.normalized * speed;
+        move.y = rb.velocity.y;
         rb.velocity = move;
     }
 
