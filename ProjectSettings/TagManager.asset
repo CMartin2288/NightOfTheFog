@@ -7,11 +7,12 @@ TagManager:
   - Enemy
   - HoldWeap
   - FieldWeap
+  - Shade
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - ObjectInteractionLayer
   - Water
   - UI
   - 
