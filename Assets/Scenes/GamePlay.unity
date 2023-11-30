@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 357403559}
   - component: {fileID: 357403558}
   m_Layer: 0
-  m_Name: water
+  m_Name: lake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1157,9 +1157,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1260793636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1ed868cf3f911c4d89621339d347858, type: 3}
+  m_Script: {fileID: 11500000, guid: d126c2bd327160c42931edcc1ad4f5f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Stalker: {fileID: 824841343756879023, guid: 021feaa8da150354f9404542f139cd1f, type: 3}
+  fieldsword: {fileID: 5841105635115390292, guid: 8f0c6f15a1ff9ef43b045575692bed55, type: 3}
+  startSpawnTime: 5
+  spawnTime: 10
+  swordSpawn1: {x: -110.72, y: -3.59, z: 104.97}
+  swordSpawn2: {x: 35.54, y: 12.33, z: 90.26}
+  swordSpawn3: {x: -34.95, y: -1.93, z: -47.64}
+  swordSpawn4: {x: 3.31, y: 6.22, z: -180.6}
+  swordSpawn5: {x: 93.18, y: -2.1, z: 57.52}
 --- !u!1 &1418111767
 GameObject:
   m_ObjectHideFlags: 0
@@ -1590,55 +1599,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10.000005, y: 0, z: 10.000003}
   m_Center: {x: 0, y: -0.00000035762787, z: -0.00000071525574}
---- !u!1 &2048700639
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2048700640}
-  - component: {fileID: 2048700641}
-  m_Layer: 0
-  m_Name: Spawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2048700640
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048700639}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2048700641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048700639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d126c2bd327160c42931edcc1ad4f5f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Stalker: {fileID: 824841343756879023, guid: 021feaa8da150354f9404542f139cd1f, type: 3}
-  fieldsword: {fileID: 5841105635115390292, guid: 8f0c6f15a1ff9ef43b045575692bed55, type: 3}
-  startSpawnTime: 5
-  spawnTime: 10
-  swordSpawn1: {x: -110.72, y: -3.59, z: 104.97}
 --- !u!1 &2076395708
 GameObject:
   m_ObjectHideFlags: 0
@@ -1757,7 +1717,7 @@ GameObject:
   - component: {fileID: 2076718531}
   - component: {fileID: 2076718530}
   m_Layer: 0
-  m_Name: water (1)
+  m_Name: terrain water (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1850,63 +1810,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 6.916, y: -43.133, z: -2.984}
---- !u!1001 &2082425338789400254
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5841105635115390292, guid: 8f0c6f15a1ff9ef43b045575692bed55, type: 3}
-      propertyPath: m_Name
-      value: knightsword
-      objectReference: {fileID: 0}
-    - target: {fileID: 6504348003533688814, guid: 8f0c6f15a1ff9ef43b045575692bed55, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -110.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 6504348003533688814, guid: 8f0c6f15a1ff9ef43b045575692bed55, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 6504348003533688814, guid: 8f0c6f15a1ff9ef43b045575692bed55, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 104.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 6504348003533688814, guid: 8f0c6f15a1ff9ef43b045575692bed55, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6504348003533688814, guid: 8f0c6f15a1ff9ef43b045575692bed55, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6504348003533688814, guid: 8f0c6f15a1ff9ef43b045575692bed55, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6504348003533688814, guid: 8f0c6f15a1ff9ef43b045575692bed55, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6504348003533688814, guid: 8f0c6f15a1ff9ef43b045575692bed55, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6504348003533688814, guid: 8f0c6f15a1ff9ef43b045575692bed55, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6504348003533688814, guid: 8f0c6f15a1ff9ef43b045575692bed55, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8f0c6f15a1ff9ef43b045575692bed55, type: 3}
 --- !u!1001 &2548499368438859834
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1916,12 +1819,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 1260793642}
     m_Modifications:
     - target: {fileID: 1167451739739291324, guid: b067391f566564e41b46a523ca3edc66, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167451739739291324, guid: b067391f566564e41b46a523ca3edc66, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167451739739291324, guid: b067391f566564e41b46a523ca3edc66, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.31
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1167451739739291324, guid: b067391f566564e41b46a523ca3edc66, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.12
+      value: 1.11
       objectReference: {fileID: 0}
     - target: {fileID: 1167451739739291324, guid: b067391f566564e41b46a523ca3edc66, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1959,6 +1870,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: knightsword
       objectReference: {fileID: 0}
+    - target: {fileID: 1979419479165248518, guid: b067391f566564e41b46a523ca3edc66, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8958518273664198696, guid: b067391f566564e41b46a523ca3edc66, type: 3}
       propertyPath: m_Height
       value: 4.3
@@ -1981,63 +1896,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b067391f566564e41b46a523ca3edc66, type: 3}
---- !u!1001 &8371894369970133147
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2343338039510071569, guid: 94ab041e55376c84daaf6a2f77674110, type: 3}
-      propertyPath: m_Name
-      value: pumpking
-      objectReference: {fileID: 0}
-    - target: {fileID: 3156712334082712491, guid: 94ab041e55376c84daaf6a2f77674110, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 218.57977
-      objectReference: {fileID: 0}
-    - target: {fileID: 3156712334082712491, guid: 94ab041e55376c84daaf6a2f77674110, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 168.74902
-      objectReference: {fileID: 0}
-    - target: {fileID: 3156712334082712491, guid: 94ab041e55376c84daaf6a2f77674110, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -135.43605
-      objectReference: {fileID: 0}
-    - target: {fileID: 3156712334082712491, guid: 94ab041e55376c84daaf6a2f77674110, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3156712334082712491, guid: 94ab041e55376c84daaf6a2f77674110, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3156712334082712491, guid: 94ab041e55376c84daaf6a2f77674110, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3156712334082712491, guid: 94ab041e55376c84daaf6a2f77674110, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3156712334082712491, guid: 94ab041e55376c84daaf6a2f77674110, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3156712334082712491, guid: 94ab041e55376c84daaf6a2f77674110, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3156712334082712491, guid: 94ab041e55376c84daaf6a2f77674110, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 94ab041e55376c84daaf6a2f77674110, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2048,6 +1906,3 @@ SceneRoots:
   - {fileID: 357403561}
   - {fileID: 2076718533}
   - {fileID: 699692045}
-  - {fileID: 2082425338789400254}
-  - {fileID: 8371894369970133147}
-  - {fileID: 2048700640}
