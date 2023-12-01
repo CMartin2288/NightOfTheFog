@@ -63,10 +63,6 @@ public class Spawner : MonoBehaviour {
         Instantiate(this.fieldsword, randomSpawnPoint, Quaternion.identity); // Quat.identity = no rotation
         Debug.Log("Added a Sword");
 
-        //spawns a singular shade, default spawn coordinates are coordinates in prefab
-        Instantiate(this.Shadev2);
-        shadeCount++;
-
         //Spawning enemy in timed intervals
         InvokeRepeating ("Spawn", startSpawnTime, spawnTime);
     }
@@ -76,6 +72,11 @@ public class Spawner : MonoBehaviour {
     }
  
     private void Spawn () {
+        if (shadeCount == 0) {
+            //spawns a singular shade, default spawn coordinates are coordinates in prefab
+            Instantiate(this.Shadev2);
+            shadeCount++;
+        }
         if (enemyCount < MAX_ENEMY) {
             //Randomly chooses enemy to spawn 1 = stalker, 2 pumpking)
             //spawns an enemy, default spawn coordinates are coordinates in prefab, may need to specify spawn points
