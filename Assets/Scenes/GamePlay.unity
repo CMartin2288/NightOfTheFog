@@ -1160,10 +1160,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d126c2bd327160c42931edcc1ad4f5f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stalker: {fileID: 824841343756879023, guid: 021feaa8da150354f9404542f139cd1f, type: 3}
+  Stalker: {fileID: 5607264018941424072, guid: f97850f7c60ed2144a5368ec978c49ba, type: 3}
   pumpking: {fileID: 2343338039510071569, guid: 94ab041e55376c84daaf6a2f77674110, type: 3}
   Shadev2: {fileID: 7575516166296148710, guid: 20e273e99aae2634a9f60539da07c804, type: 3}
   fieldsword: {fileID: 5841105635115390292, guid: 8f0c6f15a1ff9ef43b045575692bed55, type: 3}
+  Player: {fileID: 1847595805}
   startSpawnTime: 5
   spawnTime: 10
   swordSpawn1: {x: -110.72, y: -3.59, z: 104.97}

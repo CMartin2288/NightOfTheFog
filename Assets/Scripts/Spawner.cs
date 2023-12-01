@@ -13,6 +13,7 @@ public class Spawner : MonoBehaviour {
     public GameObject pumpking;
     public GameObject Shadev2;
     public GameObject fieldsword;
+    public GameObject Player;
 
     //Enemy Max Spawn
 
