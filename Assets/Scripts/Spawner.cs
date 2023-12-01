@@ -36,7 +36,7 @@ public class Spawner : MonoBehaviour {
     // TODO probably will need to add random spawn locations for enemies too so they don't randomly fall off the map/spawn in inacessible areas
 
     //Max number of enemies (stalker and pumpking) allowed on field at a time
-    const int MAX_ENEMY = 20+1;
+    public const int MAX_ENEMY = 20;
     //enemy count (stalker and pumpking) reference
     int enemyCount = 0;
     //shade enemy count, only 1!
@@ -97,14 +97,14 @@ public class Spawner : MonoBehaviour {
             Debug.Log("destroyed");
             playerWeapon.SetActive(true);
         }
-        // running into "enemy" tags
-        else if (other.gameObject.CompareTag("Enemy")){
-            Debug.Log("Ran into an enemy took damage!");
-        }
-        //running into shade GAME OVER?
-        else if (other.gameObject.CompareTag("Shade")){
-            Debug.Log("Ran into Shade. You Died!!!");
-        }
+        // Player runs into "enemy" tags
+        // else if (other.gameObject.CompareTag("Enemy")){
+        //     Debug.Log("Ran into an enemy took damage!");
+        // }
+        // //running into shade GAME OVER?
+        // else if (other.gameObject.CompareTag("Shade")){
+        //     Debug.Log("Ran into Shade. You Died!!!");
+        // }
     }
  
 }
