@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3a2aa4a0710946b408ca1801cd4a5312
+guid: f55ad69d43b61f544b77fc898dd854cf
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -31,94 +31,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Idle
-      takeName: Armature|ArmatureAction
-      internalID: 4781951162920444690
-      firstFrame: 1
-      lastFrame: 42
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Chase
-      takeName: Armature|ArmatureAction
-      internalID: -4183284580796988303
-      firstFrame: 43
-      lastFrame: 64
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Attack
-      takeName: Armature|ArmatureAction
-      internalID: -1713325850127434092
-      firstFrame: 65
-      lastFrame: 104
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []

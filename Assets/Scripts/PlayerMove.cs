@@ -45,14 +45,17 @@ public class PlayerMove : MonoBehaviour
 
         hori = Input.GetAxis("Horizontal");
         vert = Input.GetAxis("Vertical");
+
+        move = orientation.forward*vert + orientation.right*hori;
+        if(move.magnitude > 1) move = move.normalized;
+        move = move * speed;
+        move.y = rb.velocity.y;
+        rb.velocity = move;
     }
 
     void FixedUpdate()
     {
-        move = orientation.forward*vert + orientation.right*hori;
-        move = move.normalized * speed;
-        move.y = rb.velocity.y;
-        rb.velocity = move;
+        
     }
 
 }
