@@ -42,6 +42,9 @@ public class Spawner : MonoBehaviour {
     //shade enemy count, only 1!
     int shadeCount = 0;
 
+    // health. How many times they can run into a standard enemy before death
+    public int playerHealth = 3
+
     void Start () {
         //hides player sword until obtained
         playerWeapon = GameObject.FindWithTag("HoldWeap");
@@ -97,14 +100,25 @@ public class Spawner : MonoBehaviour {
             Debug.Log("destroyed");
             playerWeapon.SetActive(true);
         }
-        // Player runs into "enemy" tags
-        // else if (other.gameObject.CompareTag("Enemy")){
-        //     Debug.Log("Ran into an enemy took damage!");
-        // }
-        // //running into shade GAME OVER?
-        // else if (other.gameObject.CompareTag("Shade")){
-        //     Debug.Log("Ran into Shade. You Died!!!");
-        // }
+        Player runs into "enemy" tags
+        else if (other.gameObject.CompareTag("Enemy")){
+            Debug.Log("Ran into an enemy took damage!");
+            playerHealth--;
+            if (playerHealth <= 0){
+                GameEnd();
+            }
+
+        }
+        //running into shade GAME OVER?
+        else if (other.gameObject.CompareTag("Shade")){
+            Debug.Log("Ran into Shade. You Died!!!");
+            playerHealth = playerHealth-3;
+            GameEnd();
+        }
+    }
+
+    private void GameEnd(){
+        // Ends game
     }
  
 }

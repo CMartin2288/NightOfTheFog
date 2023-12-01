@@ -37,12 +37,12 @@ public class Attack : MonoBehaviour
         //sword hits shade enemy
         else if (other.gameObject.CompareTag("Shade")) {
             Debug.Log("if shade enemy");
+            //removes health
+            shadehealth--;
             if (shadehealth==0) {
                 Destroy(other.gameObject);
                 Debug.Log("destroyed");
             }
-            //removes health
-            shadehealth--;
         }
     }
 }
