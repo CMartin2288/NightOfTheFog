@@ -17,10 +17,10 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1)) { // right-click
-            Debug.Log("Pressed right-click.");
-            // ATTACK do animation
-        }
+        // if (Input.GetMouseButtonDown(1)) { // right-click
+        //     Debug.Log("Pressed right-click.");
+        //     // ATTACK do animation
+        // }
 
     }
 
