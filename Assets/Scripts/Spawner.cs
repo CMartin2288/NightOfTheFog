@@ -27,11 +27,11 @@ public class Spawner : MonoBehaviour {
     public int spawnTime = 10;
 
     // predertermined spawn points (due to having to take into account height)
-    public Vector3 swordSpawn1 = new Vector3(-110.72f,-3.59f,104.97f);
-    public Vector3 swordSpawn2 = new Vector3(35.54f,12.33f,90.26f);
-    public Vector3 swordSpawn3 = new Vector3(-34.95f,-1.93f,-47.64f);
-    public Vector3 swordSpawn4 = new Vector3(3.31f,6.22f,-180.60f);
-    public Vector3 swordSpawn5 = new Vector3(93.18f,-2.10f,57.52f);
+    public Vector3 swordSpawn0 = new Vector3(-110.72f,-2.00f,104.97f);
+    public Vector3 swordSpawn1 = new Vector3(35.54f,14.30f,90.26f);
+    public Vector3 swordSpawn2 = new Vector3(-34.95f,0.01f,-47.64f);
+    public Vector3 swordSpawn3 = new Vector3(3.31f,8.00f,-180.60f);
+    public Vector3 swordSpawn4 = new Vector3(93.18f,0.00f,57.52f);
 
     // TODO probably will need to add random spawn locations for enemies too so they don't randomly fall off the map/spawn in inacessible areas
 
@@ -50,18 +50,25 @@ public class Spawner : MonoBehaviour {
         playerWeapon = GameObject.FindWithTag("HoldWeap");
         playerWeapon.SetActive(false);
 
-        //spawns a sword from a randomly chosen coordinate out of 5 predetermined locations
-        List<Vector3> swordSpawns = new List<Vector3>();
-        swordSpawns.Add(swordSpawn1);
-        swordSpawns.Add(swordSpawn2);
-        swordSpawns.Add(swordSpawn3);
-        swordSpawns.Add(swordSpawn4);
-        swordSpawns.Add(swordSpawn5);
-        int randomNum = Random.Range(0,5); //Random.Range(inclusive, exclusive)
-        Debug.Log("Spawn Area: "+randomNum);
-        Vector3 randomSpawnPoint = swordSpawns[randomNum];//index begins at 0
-        Instantiate(this.fieldsword, randomSpawnPoint, Quaternion.identity); // Quat.identity = no rotation
-        Debug.Log("Added a Sword");
+        //spawns a sword from a randomly chosen coordinate out of 5 predetermined locations if no sword yet
+        if (GameObject.FindWithTag("FieldWeap") == null) {  
+            Debug.Log("No Sword Detected!");
+            List<Vector3> swordSpawns = new List<Vector3>();
+            swordSpawns.Add(swordSpawn0);
+            swordSpawns.Add(swordSpawn1);
+            swordSpawns.Add(swordSpawn2);
+            swordSpawns.Add(swordSpawn3);
+            swordSpawns.Add(swordSpawn4);
+            int randomNum = Random.Range(0,5); //Random.Range(inclusive, exclusive)
+            Debug.Log("Spawn Area: "+randomNum);
+            Vector3 randomSpawnPoint = swordSpawns[randomNum];//index begins at 0
+            Debug.Log(swordSpawns[randomNum]);
+            Instantiate(this.fieldsword, randomSpawnPoint, Quaternion.Euler(180, 0, 0)); // Quat.identity = no rotation
+            Debug.Log("Added a Sword");
+        }
+        else {
+            Debug.Log("Sword Detected!");
+        }
 
         //Spawning enemy in timed intervals
         InvokeRepeating ("Spawn", startSpawnTime, spawnTime);
