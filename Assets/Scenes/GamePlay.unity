@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 262.33694, g: 325.04984, b: 430.2193, a: 1}
+  m_IndirectSpecularColor: {r: 5.9003453, g: 18.456911, b: 31.224064, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2058,7 +2058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Stalker: {fileID: 5607264018941424072, guid: f97850f7c60ed2144a5368ec978c49ba, type: 3}
-  pumpking: {fileID: 3983746988262238430, guid: af645c8a732b51b48a49fc330f7f44f1, type: 3}
+  pumpking: {fileID: 2787136643225481191, guid: 19f5eb94bc06c5b4eb363c0c071b2150, type: 3}
   Shadev2: {fileID: 7575516166296148710, guid: 20e273e99aae2634a9f60539da07c804, type: 3}
   fieldsword: {fileID: 3081295474919605594, guid: 6e342eb79d3daba45929143a2343add3, type: 3}
   Player: {fileID: 0}
@@ -2932,6 +2932,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817895165}
   m_CullTransparentMesh: 1
+--- !u!1001 &1830220131
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 707099121033178058, guid: af645c8a732b51b48a49fc330f7f44f1, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3983746988262238430, guid: af645c8a732b51b48a49fc330f7f44f1, type: 3}
+      propertyPath: m_Name
+      value: pumpkingani (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324243356270424676, guid: af645c8a732b51b48a49fc330f7f44f1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.056603
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324243356270424676, guid: af645c8a732b51b48a49fc330f7f44f1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324243356270424676, guid: af645c8a732b51b48a49fc330f7f44f1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.9429083
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324243356270424676, guid: af645c8a732b51b48a49fc330f7f44f1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324243356270424676, guid: af645c8a732b51b48a49fc330f7f44f1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324243356270424676, guid: af645c8a732b51b48a49fc330f7f44f1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324243356270424676, guid: af645c8a732b51b48a49fc330f7f44f1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324243356270424676, guid: af645c8a732b51b48a49fc330f7f44f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324243356270424676, guid: af645c8a732b51b48a49fc330f7f44f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324243356270424676, guid: af645c8a732b51b48a49fc330f7f44f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: af645c8a732b51b48a49fc330f7f44f1, type: 3}
 --- !u!1001 &1830537519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2984,17 +3045,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: heldknightswordani
       objectReference: {fileID: 0}
-    - target: {fileID: 3081295474919605594, guid: cdfadad13c37ca5428553b19706889bb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4163665934946097136, guid: cdfadad13c37ca5428553b19706889bb, type: 3}
       propertyPath: m_Radius
       value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6945691589984265395, guid: cdfadad13c37ca5428553b19706889bb, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3245,7 +3298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1902248204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3684,3 +3737,4 @@ SceneRoots:
   - {fileID: 825250923}
   - {fileID: 611680962}
   - {fileID: 2082731190}
+  - {fileID: 1830220131}

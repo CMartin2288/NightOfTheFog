@@ -4,11 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
   - HoldWeap
   - FieldWeap
   - Shade
   - PauseMenu
+  - Stalker
+  - Pumpking
   layers:
   - Default
   - TransparentFX

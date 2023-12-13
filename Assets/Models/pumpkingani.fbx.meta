@@ -102,7 +102,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -120,7 +120,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cloth|Pump Walk
+      name: PumpCloth_Attack
       takeName: Cloth|Pump Walk
       internalID: -6054948879041602823
       firstFrame: 90

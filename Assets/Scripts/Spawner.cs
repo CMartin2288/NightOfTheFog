@@ -36,7 +36,7 @@ public class Spawner : MonoBehaviour {
     // TODO probably will need to add random spawn locations for enemies too so they don't randomly fall off the map/spawn in inacessible areas
 
     //Max number of enemies (stalker and pumpking) allowed on field at a time
-    public const int MAX_ENEMY = 20;
+    public const int MAX_ENEMY = 5;
     //enemy count (stalker and pumpking) reference
     int enemyCount = 0;
     //shade enemy count, only 1!
@@ -52,7 +52,7 @@ public class Spawner : MonoBehaviour {
 
         //spawns a sword from a randomly chosen coordinate out of 5 predetermined locations if no sword yet
         if (GameObject.FindWithTag("FieldWeap") == null) {  
-            Debug.Log("No Sword Detected!");
+            // Debug.Log("No Sword Detected!");
             List<Vector3> swordSpawns = new List<Vector3>();
             swordSpawns.Add(swordSpawn0);
             swordSpawns.Add(swordSpawn1);
@@ -60,11 +60,10 @@ public class Spawner : MonoBehaviour {
             swordSpawns.Add(swordSpawn3);
             swordSpawns.Add(swordSpawn4);
             int randomNum = Random.Range(0,5); //Random.Range(inclusive, exclusive)
-            Debug.Log("Spawn Area: "+randomNum);
+            // Debug.Log("Spawn Area: "+randomNum);
             Vector3 randomSpawnPoint = swordSpawns[randomNum];//index begins at 0
-            Debug.Log(swordSpawns[randomNum]);
             Instantiate(this.fieldsword, randomSpawnPoint, Quaternion.Euler(180, 0, 0)); // Quat.identity = no rotation
-            Debug.Log("Added a Sword");
+            Debug.Log("Added a Sword, Spawn Area:"+randomNum);
         }
         else {
             Debug.Log("Sword Detected!");
@@ -88,7 +87,7 @@ public class Spawner : MonoBehaviour {
             //Randomly chooses enemy to spawn 1 = stalker, 2 pumpking)
             //spawns an enemy, default spawn coordinates are coordinates in prefab, may need to specify spawn points
             int rndNum = Random.Range(1,3);//Random.Range(inclusive, exclusive)
-            Debug.Log("Random number: " + rndNum);
+            // Debug.Log("Random number: " + rndNum);
             if (rndNum == 1){
             Instantiate(this.Stalker);
             }
@@ -96,7 +95,7 @@ public class Spawner : MonoBehaviour {
             Instantiate(this.pumpking);
             }
             enemyCount++;
-            Debug.Log("spawned");
+            // Debug.Log("spawned");
         }
     }
 
@@ -108,9 +107,9 @@ public class Spawner : MonoBehaviour {
             Debug.Log("destroyed");
             playerWeapon.SetActive(true);
         }
-        //Player runs into "enemy" tags
-        else if (other.gameObject.CompareTag("Enemy")){
-            Debug.Log("Ran into an enemy took damage!");
+        //Player runs into "Stalker" or "Pumpking" tags with sword
+        else if (other.gameObject.CompareTag("Stalker") || other.gameObject.CompareTag("Pumpking")){
+            Debug.Log("Ran into an enemy took -1 damage! Health:"+playerHealth+" - 1 = " + (playerHealth-1));
             playerHealth--;
             if (playerHealth <= 0){
                 GameEnd();

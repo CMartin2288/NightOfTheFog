@@ -10,20 +10,43 @@ public class EnemyMove : MonoBehaviour
     Transform Player;
     Rigidbody rb;
 
+    Animator animator;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         Player = GameObject.Find("Player").transform;
+
+        // attaching animator
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.direction = (this.Player.transform.position - this.transform.position).normalized;
-        
+        Vector3 playMinusEnemy = this.Player.transform.position - this.transform.position;
+        this.direction = (playMinusEnemy).normalized;
+            
         var velocity = this.direction*this.speed;
         this.rb.velocity = velocity;
         this.transform.LookAt(Player);
+
+        if (playMinusEnemy.magnitude < 3) {
+            // attack animations
+            if (gameObject.tag == "Shade") {
+                Debug.Log("Shade Attacked");
+            }
+            //stalker
+            else if (gameObject.tag == "Stalker") {
+                //do stuff based off animations
+                Debug.Log("Stalker Attacked");
+            }
+            // pumpking
+            else {
+                animator.SetTrigger("Attack");
+                Debug.Log("Pumpking Attacked");
+            }
+        }
     }
 
     void FixedUpdate()

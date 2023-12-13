@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: eeed11be520132145b404b239c8364ab, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Pumpking
       objectReference: {fileID: 0}
     - target: {fileID: 5063173968627349967, guid: eeed11be520132145b404b239c8364ab, type: 3}
       propertyPath: m_Color.b
@@ -120,6 +120,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eeed11be520132145b404b239c8364ab, type: 3}
       insertIndex: -1
       addedObject: {fileID: 707099121033178058}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eeed11be520132145b404b239c8364ab, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4984841311632653552}
   m_SourcePrefab: {fileID: 100100000, guid: eeed11be520132145b404b239c8364ab, type: 3}
 --- !u!1 &3983746988262238430 stripped
 GameObject:
@@ -210,3 +213,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+--- !u!95 &-4984841311632653552
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3983746988262238430}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f679045441b0167488f80e8582f95768, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

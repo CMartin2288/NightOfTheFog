@@ -21,7 +21,7 @@ public class Attack : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(1)) { // right-click
-            Debug.Log("Pressed right-click.");
+            // Debug.Log("Pressed right-click.");
             animator.SetTrigger("Attack");
         }
 
@@ -31,8 +31,11 @@ public class Attack : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         Debug.Log("Attack collision detected");
         //sword hits stalker or pumpkin
-        if (other.gameObject.CompareTag("Enemy")) {
+        if (other.gameObject.CompareTag("Stalker") || other.gameObject.CompareTag("Pumpking")) {
             Debug.Log("if enemy");
+
+            // run death animations when applicable
+            
             Destroy(other.gameObject);
             Debug.Log("enemy destroyed");
             
