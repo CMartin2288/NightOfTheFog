@@ -44,7 +44,6 @@ public class EnemyMove : MonoBehaviour
             // pumpking
             else {
                 animator.SetTrigger("Attack");
-                Debug.Log("Pumpking Attacked");
             }
         }
     }

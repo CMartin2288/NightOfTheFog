@@ -10,10 +10,13 @@ public class Attack : MonoBehaviour
 
     Animator animator;
 
+    Animator enemyanimator;
+
     // Start is called before the first frame update
     void Start()
     {
         playerWeapon = GameObject.FindWithTag("HoldWeap");
+        //attaches sword animator
         animator = gameObject.GetComponent<Animator>();
     }
 
@@ -29,26 +32,40 @@ public class Attack : MonoBehaviour
 
     // Detects sword collision and does damage
     private void OnTriggerEnter(Collider other){
-        Debug.Log("Attack collision detected");
-        //sword hits stalker or pumpkin
-        if (other.gameObject.CompareTag("Stalker") || other.gameObject.CompareTag("Pumpking")) {
-            Debug.Log("if enemy");
+        GameObject enemy = other.gameObject;
+        // Debug.Log("collision detected");
 
-            // run death animations when applicable
-            
-            Destroy(other.gameObject);
-            Debug.Log("enemy destroyed");
-            
+        //sword hits stalker or pumpkin
+        if (enemy.CompareTag("Stalker")) {
+            // do something??
+            Destroy(enemy);
+            Debug.Log("enemy destroyed");   
         }
+        else 
+        if (enemy.CompareTag("Pumpking")) {
+            Debug.Log("hit Pumpking"); 
+            enemyanimator = enemy.GetComponent<Animator>();
+            bool test = (enemyanimator != null);
+            // True = found enemy, false = null
+            Debug.Log(test); 
+            enemyanimator.ResetTrigger("Attack");
+            enemyanimator.SetTrigger("Dead");
+        }
+
         //sword hits shade enemy
-        else if (other.gameObject.CompareTag("Shade")) {
+        else if (enemy.CompareTag("Shade")) {
             Debug.Log("if shade enemy");
             //removes health
             shadehealth--;
             if (shadehealth==0) {
-                Destroy(other.gameObject);
+                Destroy(enemy);
                 Debug.Log("destroyed");
             }
         }
+    }
+
+    IEnumerator PumpkingDead(){
+        Debug.Log("Dead Triggered");
+        yield return new WaitForSeconds(10.0f);
     }
 }
