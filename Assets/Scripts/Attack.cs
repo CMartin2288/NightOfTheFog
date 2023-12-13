@@ -44,11 +44,11 @@ public class Attack : MonoBehaviour
         }
         else 
         if (enemy.CompareTag("Pumpking")) {
-            Debug.Log("hit Pumpking"); 
+            // Debug.Log("hit Pumpking"); 
             enemyanimator = enemy.transform.GetChild(0).gameObject.GetComponent<Animator>();
             bool test = (enemyanimator != null);
             // True = found enemy, false = null
-            Debug.Log(test); 
+            // Debug.Log(test); 
             enemyanimator.ResetTrigger("Attack");
             enemyanimator.SetTrigger("Dead");
         }

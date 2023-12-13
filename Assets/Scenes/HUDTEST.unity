@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 6.1008615, g: 19.813295, b: 38.085453, a: 1}
+  m_IndirectSpecularColor: {r: 6.1533976, g: 19.890718, b: 38.224308, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -521,7 +521,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &410670414
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3462,12 +3462,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1807554239}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d126c2bd327160c42931edcc1ad4f5f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 969d8ecd84cb6d9438ab8d8d1621eaac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Stalker: {fileID: 5607264018941424072, guid: f97850f7c60ed2144a5368ec978c49ba, type: 3}
   pumpking: {fileID: 4456772372374077226, guid: 666bec1b516656c43810d1e5b80c5d92, type: 3}
-  Shadev2: {fileID: 7575516166296148710, guid: 20e273e99aae2634a9f60539da07c804, type: 3}
+  Shadev2: {fileID: 3846199247696034674, guid: c56a31be57cc0114d9dbb30ed9bc83f1, type: 3}
   fieldsword: {fileID: 3081295474919605594, guid: 6e342eb79d3daba45929143a2343add3, type: 3}
   Player: {fileID: 0}
   startSpawnTime: 5
@@ -3971,7 +3971,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1951974222
 RectTransform:
   m_ObjectHideFlags: 0
