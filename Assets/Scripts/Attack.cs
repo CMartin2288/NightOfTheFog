@@ -8,19 +8,22 @@ public class Attack : MonoBehaviour
     GameObject playerWeapon;
     public int shadehealth = 3;
 
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         playerWeapon = GameObject.FindWithTag("HoldWeap");
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // if (Input.GetMouseButtonDown(1)) { // right-click
-        //     Debug.Log("Pressed right-click.");
-        //     // ATTACK do animation
-        // }
+        if (Input.GetMouseButtonDown(1)) { // right-click
+            Debug.Log("Pressed right-click.");
+            animator.SetTrigger("Attack");
+        }
 
     }
 
