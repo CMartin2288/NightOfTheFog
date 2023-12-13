@@ -22,9 +22,8 @@ public class SaveManager : MonoBehaviour
     void Start()
     {
         saveFile = Application.persistentDataPath+"/save.json";
-        objectLinks = GetComponent<SaveObjects>();
         player = GameObject.FindGameObjectWithTag("Player");
-        heldSword = objectLinks._heldSword;
+        heldSword = GameObject.FindGameObjectWithTag("HoldWeap");
         
         //ShouldLoad is set by the Save Detector after clicking the continue button from the main menu
         if(shouldLoad)
