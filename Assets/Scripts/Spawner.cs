@@ -45,6 +45,11 @@ public class Spawner : MonoBehaviour {
 
     // health. How many times they can run into a standard enemy before death
     public int playerHealth = 3;
+    public GameObject healthbar1;
+    public GameObject healthbar2;
+    public GameObject healthbar3;
+    
+
 
     void Start () {
         //hides player sword until obtained
@@ -82,11 +87,21 @@ public class Spawner : MonoBehaviour {
                 SaveInfo.swordIndex = randomNum;
             }
             
+            
             // Debug.Log("Spawn Area: "+randomNum);
             Vector3 randomSpawnPoint = swordSpawns[randomNum];//index begins at 0
             Instantiate(this.fieldsword, randomSpawnPoint, Quaternion.Euler(180, 0, 0)); // Quat.identity = no rotation
             Debug.Log("Added a Sword, Spawn Area:"+randomNum);
         }
+
+        // sets Health HUD
+        healthbar1 = GameObject.FindWithTag("Health 1");
+        Debug.Log("health bar: " + (healthbar1 != null));
+        healthbar2 = GameObject.FindWithTag("Health 2");
+        Debug.Log("health bar: " + (healthbar2 != null));
+        healthbar3 = GameObject.FindWithTag("Health 3");
+        Debug.Log("health bar: " + (healthbar3 != null));
+        ShowHealthBar();
         
         //Spawning enemy in timed intervals
         InvokeRepeating ("Spawn", startSpawnTime, spawnTime);
@@ -97,6 +112,7 @@ public class Spawner : MonoBehaviour {
     }
  
     private void Spawn () {
+        Debug.Log("inside spawn");
         if (shadeCount == 0) {
             //spawns a singular shade, default spawn coordinates are coordinates in prefab
             Instantiate(this.Shadev2);
@@ -114,7 +130,7 @@ public class Spawner : MonoBehaviour {
             Instantiate(this.pumpking);
             }
             enemyCount++;
-            // Debug.Log("spawned");
+            Debug.Log("spawned");
         }
     }
 
@@ -131,6 +147,7 @@ public class Spawner : MonoBehaviour {
             Debug.Log("Ran into an enemy took -1 damage! Health:"+playerHealth+" - 1 = " + (playerHealth-1));
             playerHealth--;
             SaveInfo.savedHealth--;
+            ShowHealthBar();
             if (playerHealth <= 0){
                 LoseScreen();
             }
@@ -140,6 +157,7 @@ public class Spawner : MonoBehaviour {
         else if (other.gameObject.CompareTag("Shade")){
             Debug.Log("Ran into Shade. You Died!!!");
             playerHealth = playerHealth-3;
+            ShowHealthBar();
             LoseScreen();
         }
     }
@@ -147,6 +165,30 @@ public class Spawner : MonoBehaviour {
     private void LoseScreen(){
         // Ends game
         SceneManager.LoadSceneAsync("LoseScreen");
+    }
+
+    private void ShowHealthBar(){
+        Debug.Log("In Show Health");
+        if (playerHealth == 3) {
+           healthbar1.SetActive(false);
+           healthbar2.SetActive(false);
+           healthbar3.SetActive(true);
+        }
+        else if (playerHealth == 2) {
+            healthbar1.SetActive(false);
+            healthbar3.SetActive(false);
+            healthbar2.SetActive(true);
+        }
+        else if (playerHealth == 1){
+            healthbar2.SetActive(false);
+            healthbar3.SetActive(false);
+            healthbar1.SetActive(true);
+        }
+        else if (playerHealth == 0) {
+            healthbar1.SetActive(false);
+            healthbar2.SetActive(false);
+            healthbar3.SetActive(false);
+        }
     }
  
 }

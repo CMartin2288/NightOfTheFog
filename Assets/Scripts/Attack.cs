@@ -8,6 +8,9 @@ public class Attack : MonoBehaviour
 
     GameObject playerWeapon;
     public int shadehealth = 3;
+    GameObject shadehealthbar1;
+    GameObject shadehealthbar2;
+    GameObject shadehealthbar3;
 
     Animator animator;
 
@@ -19,6 +22,11 @@ public class Attack : MonoBehaviour
         playerWeapon = GameObject.FindWithTag("HoldWeap");
         //attaches sword animator
         animator = gameObject.GetComponent<Animator>();
+        
+        shadehealthbar1 = GameObject.FindWithTag("Shade 1");
+        shadehealthbar2 = GameObject.FindWithTag("Shade 2");
+        shadehealthbar3 = GameObject.FindWithTag("Shade 3");
+        ShowShadeHealthBar();
     }
 
     // Update is called once per frame
@@ -58,11 +66,35 @@ public class Attack : MonoBehaviour
             Debug.Log("if shade enemy");
             //removes health
             shadehealth--;
+            ShowShadeHealthBar();
             if (shadehealth==0) {
                 Destroy(enemy);
                 Debug.Log("destroyed");
                 WinScreen();
             }
+        }
+    }
+
+    private void ShowShadeHealthBar(){
+        if (shadehealth == 3) {
+           shadehealthbar1.SetActive(false);
+           shadehealthbar2.SetActive(false);
+           shadehealthbar3.SetActive(true);
+        }
+        else if (shadehealth == 2) {
+            shadehealthbar1.SetActive(false);
+            shadehealthbar3.SetActive(false);
+            shadehealthbar2.SetActive(true);
+        }
+        else if (shadehealth == 1){
+            shadehealthbar2.SetActive(false);
+            shadehealthbar3.SetActive(false);
+            shadehealthbar1.SetActive(true);
+        }
+        else if (shadehealth == 0) {
+            shadehealthbar1.SetActive(false);
+            shadehealthbar2.SetActive(false);
+            shadehealthbar3.SetActive(false);
         }
     }
 

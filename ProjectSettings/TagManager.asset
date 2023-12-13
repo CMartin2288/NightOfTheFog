@@ -14,6 +14,9 @@ TagManager:
   - Health 2
   - Health 1
   - Timer
+  - Shade 3
+  - Shade 2
+  - Shade 1
   layers:
   - Default
   - TransparentFX
