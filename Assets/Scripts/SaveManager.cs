@@ -11,7 +11,6 @@ public class SaveManager : MonoBehaviour
     private string saveFile;
 
     private GameObject player;
-    private GameObject fieldSword;
     private GameObject heldSword;
     private SaveObjects objectLinks;
 
@@ -20,12 +19,11 @@ public class SaveManager : MonoBehaviour
     public int swordIndex;
     public bool hasSword;
 
-    void Awake()
+    void Start()
     {
         saveFile = Application.persistentDataPath+"/save.json";
         objectLinks = GetComponent<SaveObjects>();
         player = GameObject.FindGameObjectWithTag("Player");
-        fieldSword = GameObject.FindGameObjectWithTag("FieldWeap");
         heldSword = objectLinks._heldSword;
         
         //ShouldLoad is set by the Save Detector after clicking the continue button from the main menu
@@ -37,7 +35,9 @@ public class SaveManager : MonoBehaviour
             JsonUtility.FromJsonOverwrite(loadData[0], this);
 
             player.transform.position = new Vector3(playerPos.x, playerPos.y, playerPos.z);
+            Physics.SyncTransforms();
             player.transform.rotation = new Quaternion(playerRot.x, playerRot.y, playerRot.z, playerRot.w);
+            Physics.SyncTransforms();
 
             heldSword.SetActive(hasSword);
         }

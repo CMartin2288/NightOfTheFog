@@ -23,6 +23,9 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
+        rotateY = transform.rotation.eulerAngles.y;
+        //rotateX = transform.rotation.eulerAngles.x;
+
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
