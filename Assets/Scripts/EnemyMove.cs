@@ -18,7 +18,10 @@ public class EnemyMove : MonoBehaviour
         Player = GameObject.Find("Player").transform;
 
         // attaching animator
-        animator = gameObject.GetComponent<Animator>();
+        if (gameObject.CompareTag("Shade") || gameObject.CompareTag("Pumpking") ) {
+            animator = gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>();
+        }
+        else animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -28,7 +31,7 @@ public class EnemyMove : MonoBehaviour
         this.direction = (playMinusEnemy).normalized;
             
         var velocity = this.direction*this.speed;
-        this.rb.velocity = velocity;
+        // this.rb.velocity = velocity;
         this.transform.LookAt(Player);
 
         if (playMinusEnemy.magnitude < 3) {

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5265754519906193698}
   m_Layer: 0
   m_Name: ShadeAnim
-  m_TagString: Untagged
+  m_TagString: Shade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3846199247696034674}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -78.44, y: -5, z: 15.11}
+  m_LocalPosition: {x: -98.62194, y: -0.5217538, z: -52.022034}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
