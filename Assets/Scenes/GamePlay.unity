@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 7.1359873, g: 21.353395, b: 40.971806, a: 1}
+  m_IndirectSpecularColor: {r: 6.1177697, g: 19.815775, b: 38.076176, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4166,7 +4166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d126c2bd327160c42931edcc1ad4f5f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stalker: {fileID: 5607264018941424072, guid: f97850f7c60ed2144a5368ec978c49ba, type: 3}
+  Stalker: {fileID: 1737135728005604374, guid: f7da453e7cdb4db4c871191cf502a067, type: 3}
   pumpking: {fileID: 4456772372374077226, guid: 666bec1b516656c43810d1e5b80c5d92, type: 3}
   Shadev2: {fileID: 3846199247696034674, guid: c56a31be57cc0114d9dbb30ed9bc83f1, type: 3}
   fieldsword: {fileID: 3081295474919605594, guid: 6e342eb79d3daba45929143a2343add3, type: 3}

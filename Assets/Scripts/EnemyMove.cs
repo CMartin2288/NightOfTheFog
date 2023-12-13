@@ -18,10 +18,7 @@ public class EnemyMove : MonoBehaviour
         Player = GameObject.Find("Player").transform;
 
         // attaching animator
-        if (gameObject.CompareTag("Shade") || gameObject.CompareTag("Pumpking") ) {
-            animator = gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>();
-        }
-        else animator = gameObject.GetComponent<Animator>();
+        animator = gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -31,18 +28,34 @@ public class EnemyMove : MonoBehaviour
         this.direction = (playMinusEnemy).normalized;
             
         var velocity = this.direction*this.speed;
-        // this.rb.velocity = velocity;
+        this.rb.velocity = velocity;
         this.transform.LookAt(Player);
 
-        if (playMinusEnemy.magnitude < 3) {
+        if (gameObject.tag != "Pumpking")
+        {
+            if(playMinusEnemy.magnitude < 20)
+            {
+                animator.SetTrigger("Chase");
+                animator.ResetTrigger("Idle");
+            }
+            else
+            {
+                animator.SetTrigger("Idle");
+                animator.ResetTrigger("Chase");
+            }
+        }
+
+        if (playMinusEnemy.magnitude < 5) {
             // attack animations
             if (gameObject.tag == "Shade") {
                 Debug.Log("Shade Attacked");
+                animator.SetTrigger("Attack");
             }
             //stalker
             else if (gameObject.tag == "Stalker") {
                 //do stuff based off animations
                 Debug.Log("Stalker Attacked");
+                animator.SetTrigger("Attack");
             }
             // pumpking
             else {
