@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class SaveDetector : MonoBehaviour
 {
-    public bool validSave = false;
     //The Windows save file for the game is found in C:\Users\<<username>>\AppData\LocalLow\DefaultCompany\NightOfFog
     private string saveFile;
     public GameObject continueButton;
@@ -18,9 +17,8 @@ public class SaveDetector : MonoBehaviour
         saveFile = Application.persistentDataPath+"/save.json";
         if(File.Exists(saveFile))
         {
-            JsonUtility.FromJsonOverwrite(File.ReadLines(saveFile).First(), this);
-            //Update the continue button based on the 
-            continueButton.GetComponent<Button>().interactable = validSave;
+            //Enable the continue button
+            continueButton.GetComponent<Button>().interactable = true;
         }
     }
 

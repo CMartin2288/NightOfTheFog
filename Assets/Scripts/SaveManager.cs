@@ -6,19 +6,62 @@ using System.Linq;
 
 public class SaveManager : MonoBehaviour
 {
-    public static bool shouldLoad = false;
+    public static bool shouldLoad;
     //The Windows save file for the game is found in C:\Users\<<username>>\AppData\LocalLow\DefaultCompany\NightOfFog
     private string saveFile;
-    
-    // Start is called before the first frame update
-    void Start()
+
+    private GameObject player;
+    private GameObject fieldSword;
+    private GameObject heldSword;
+    private SaveObjects objectLinks;
+
+    public Vector3 playerPos;
+    public Quaternion playerRot;
+    public int swordIndex;
+    public bool hasSword;
+
+    void Awake()
     {
         saveFile = Application.persistentDataPath+"/save.json";
+        objectLinks = GetComponent<SaveObjects>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        fieldSword = GameObject.FindGameObjectWithTag("FieldWeap");
+        heldSword = objectLinks._heldSword;
         
         //ShouldLoad is set by the Save Detector after clicking the continue button from the main menu
         if(shouldLoad)
         {
-            print("The game will load data here");
+            Debug.Log("The game will load data here");
+
+            string[] loadData = File.ReadAllLines(saveFile);
+            JsonUtility.FromJsonOverwrite(loadData[0], this);
+
+            player.transform.position = new Vector3(playerPos.x, playerPos.y, playerPos.z);
+            player.transform.rotation = new Quaternion(playerRot.x, playerRot.y, playerRot.z, playerRot.w);
+
+            heldSword.SetActive(hasSword);
         }
+    }
+
+    //Update is called every frame, needed to load data for spawned objects
+    void Update()
+    {
+
+    }
+
+    public void SaveQuit()
+    {
+        //Retrieve current 
+        playerPos = player.transform.position;
+        playerRot = player.transform.rotation;
+        hasSword = heldSword.activeSelf;
+        
+        List<string> saveData = new List<string>{};
+
+        saveData.Add(JsonUtility.ToJson(this));
+
+        File.WriteAllLines(saveFile, saveData);
+
+        Application.Quit();
     }
 }
