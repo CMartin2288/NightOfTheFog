@@ -13,6 +13,7 @@ TagManager:
   - Health 3
   - Health 2
   - Health 1
+  - Timer
   layers:
   - Default
   - TransparentFX

@@ -14,7 +14,7 @@ public class Spawner : MonoBehaviour {
     public GameObject pumpking;
     public GameObject Shadev2;
     public GameObject fieldsword;
-    public GameObject Player;
+    public SaveManager SaveInfo;
 
     //Enemy Max Spawn
 
@@ -49,27 +49,45 @@ public class Spawner : MonoBehaviour {
     void Start () {
         //hides player sword until obtained
         playerWeapon = GameObject.FindWithTag("HoldWeap");
-        playerWeapon.SetActive(false);
+        
+        if(SaveManager.shouldLoad)
+        {
+            playerHealth = SaveInfo.savedHealth;
+        }
+        else
+        {
+            SaveInfo.savedHealth = playerHealth;
+        }
 
-        //spawns a sword from a randomly chosen coordinate out of 5 predetermined locations if no sword yet
-        if (GameObject.FindWithTag("FieldWeap") == null) {  
-            // Debug.Log("No Sword Detected!");
+        if(!(SaveInfo.hasSword))
+        {
+            playerWeapon.SetActive(false);
+            
+            //spawns a sword from a randomly chosen coordinate out of 5 predetermined locations if no sword yet
             List<Vector3> swordSpawns = new List<Vector3>();
             swordSpawns.Add(swordSpawn0);
             swordSpawns.Add(swordSpawn1);
             swordSpawns.Add(swordSpawn2);
             swordSpawns.Add(swordSpawn3);
             swordSpawns.Add(swordSpawn4);
-            int randomNum = Random.Range(0,5); //Random.Range(inclusive, exclusive)
+            
+            int randomNum;
+            if(SaveManager.shouldLoad)
+            {
+                randomNum = SaveInfo.swordIndex;
+            }
+            else
+            {
+                randomNum = Random.Range(0,5); //Random.Range(inclusive, exclusive)
+                SaveInfo.swordIndex = randomNum;
+            }
+            
             // Debug.Log("Spawn Area: "+randomNum);
             Vector3 randomSpawnPoint = swordSpawns[randomNum];//index begins at 0
             Instantiate(this.fieldsword, randomSpawnPoint, Quaternion.Euler(180, 0, 0)); // Quat.identity = no rotation
             Debug.Log("Added a Sword, Spawn Area:"+randomNum);
         }
-        else {
-            Debug.Log("Sword Detected!");
-        }
-
+        
         //Spawning enemy in timed intervals
         InvokeRepeating ("Spawn", startSpawnTime, spawnTime);
     }
@@ -112,6 +130,7 @@ public class Spawner : MonoBehaviour {
         else if (other.gameObject.CompareTag("Stalker") || other.gameObject.CompareTag("Pumpking")){
             Debug.Log("Ran into an enemy took -1 damage! Health:"+playerHealth+" - 1 = " + (playerHealth-1));
             playerHealth--;
+            SaveInfo.savedHealth--;
             if (playerHealth <= 0){
                 LoseScreen();
             }
