@@ -10,6 +10,9 @@ TagManager:
   - PauseMenu
   - Stalker
   - Pumpking
+  - Health 3
+  - Health 2
+  - Health 1
   layers:
   - Default
   - TransparentFX
