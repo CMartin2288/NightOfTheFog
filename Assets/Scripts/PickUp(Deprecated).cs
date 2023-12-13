@@ -8,8 +8,8 @@ public class PickUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerWeapon = GameObject.FindWithTag("HoldWeap");
-        playerWeapon.SetActive(false);
+        // playerWeapon = GameObject.FindWithTag("HoldWeap");
+        // playerWeapon.SetActive(false);
     }
 
     // Update is called once per frame
@@ -19,12 +19,12 @@ public class PickUp : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other){
-        Debug.Log("collision detected");
-        if (other.gameObject.CompareTag("FieldWeap")) {
-            Debug.Log("if field weap");
-            Destroy(other.gameObject);
-            Debug.Log("destroyed");
-            playerWeapon.SetActive(true);
-        }
+        // Debug.Log("collision detected");
+        // if (other.gameObject.CompareTag("FieldWeap")) {
+        //     Debug.Log("if field weap");
+        //     Destroy(other.gameObject);
+        //     Debug.Log("destroyed");
+        //     playerWeapon.SetActive(true);
+        // }
     }
 }

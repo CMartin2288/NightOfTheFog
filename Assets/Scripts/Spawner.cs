@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Spawner : MonoBehaviour {
     //SCRIPT CONNECTED TO PLAYER
@@ -112,7 +113,7 @@ public class Spawner : MonoBehaviour {
             Debug.Log("Ran into an enemy took -1 damage! Health:"+playerHealth+" - 1 = " + (playerHealth-1));
             playerHealth--;
             if (playerHealth <= 0){
-                GameEnd();
+                LoseScreen();
             }
 
         }
@@ -120,12 +121,13 @@ public class Spawner : MonoBehaviour {
         else if (other.gameObject.CompareTag("Shade")){
             Debug.Log("Ran into Shade. You Died!!!");
             playerHealth = playerHealth-3;
-            GameEnd();
+            LoseScreen();
         }
     }
 
-    private void GameEnd(){
+    private void LoseScreen(){
         // Ends game
+        SceneManager.LoadSceneAsync("LoseScreen");
     }
  
 }

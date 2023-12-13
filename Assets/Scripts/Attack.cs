@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Attack : MonoBehaviour
 {
@@ -60,12 +61,12 @@ public class Attack : MonoBehaviour
             if (shadehealth==0) {
                 Destroy(enemy);
                 Debug.Log("destroyed");
+                WinScreen();
             }
         }
     }
 
-    IEnumerator PumpkingDead(){
-        Debug.Log("Dead Triggered");
-        yield return new WaitForSeconds(10.0f);
+    private void WinScreen(){
+        SceneManager.LoadSceneAsync("WinScreen");
     }
 }
