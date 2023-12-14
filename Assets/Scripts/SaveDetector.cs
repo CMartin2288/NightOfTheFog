@@ -26,4 +26,9 @@ public class SaveDetector : MonoBehaviour
     {
         SaveManager.shouldLoad = true;
     }
+
+    public void SetToNotLoad()
+    {
+        SaveManager.shouldLoad = false;
+    }
 }

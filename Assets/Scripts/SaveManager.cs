@@ -34,6 +34,8 @@ public class SaveManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         heldSword = GameObject.FindGameObjectWithTag("HoldWeap");
         displayTimer = GameObject.FindGameObjectWithTag("Timer");
+
+        timer = 0f;
         
         //ShouldLoad is set by the Save Detector after clicking the continue button from the main menu
         if(shouldLoad)
