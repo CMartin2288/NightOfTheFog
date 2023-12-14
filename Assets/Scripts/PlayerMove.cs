@@ -21,6 +21,8 @@ public class PlayerMove : MonoBehaviour
 
     Rigidbody rb;
 
+    public AudioSource walk;
+
     void Start()
     {
         rotateY = transform.rotation.eulerAngles.y;
@@ -31,6 +33,9 @@ public class PlayerMove : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+
+        walk.Play();
+        walk.Pause();
     }
 
     // Update is called once per frame
@@ -53,6 +58,10 @@ public class PlayerMove : MonoBehaviour
         if(move.magnitude > 1) move = move.normalized;
         move = move * speed;
         move.y = rb.velocity.y;
+
+        if(move.magnitude > 0.2) walk.UnPause();
+        else walk.Pause();
+
         rb.velocity = move;
     }
 

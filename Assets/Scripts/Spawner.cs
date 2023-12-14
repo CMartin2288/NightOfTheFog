@@ -49,7 +49,10 @@ public class Spawner : MonoBehaviour {
     public GameObject healthbar2;
     public GameObject healthbar3;
     
+    public AudioSource playerSound;
+    public AudioClip hurt;
 
+    public bool invuln = false;
 
     void Start () {
         //hides player sword until obtained
@@ -142,23 +145,35 @@ public class Spawner : MonoBehaviour {
             Debug.Log("destroyed");
             playerWeapon.SetActive(true);
         }
-        //Player runs into "Stalker" or "Pumpking" tags with sword
-        else if (other.gameObject.CompareTag("Stalker") || other.gameObject.CompareTag("Pumpking")){
-            Debug.Log("Ran into an enemy took -1 damage! Health:"+playerHealth+" - 1 = " + (playerHealth-1));
-            playerHealth--;
-            SaveInfo.savedHealth--;
-            ShowHealthBar();
-            if (playerHealth <= 0){
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if(!invuln)
+        {
+            if (other.gameObject.CompareTag("Stalker") || other.gameObject.CompareTag("Pumpking"))
+            {
+                Debug.Log("Ran into an enemy took -1 damage! Health:"+playerHealth+" - 1 = " + (playerHealth-1));
+                playerHealth--;
+                SaveInfo.savedHealth--;
+
+                playerSound.PlayOneShot(hurt);
+
+                ShowHealthBar();
+                if (playerHealth <= 0){
+                    LoseScreen();
+                }
+
+                invuln = true;
+                StartCoroutine(iFrames());
+            }
+            //running into shade GAME OVER?
+            else if (other.gameObject.CompareTag("Shade")){
+                Debug.Log("Ran into Shade. You Died!!!");
+                 playerHealth = playerHealth-3;
+                ShowHealthBar();
                 LoseScreen();
             }
-
-        }
-        //running into shade GAME OVER?
-        else if (other.gameObject.CompareTag("Shade")){
-            Debug.Log("Ran into Shade. You Died!!!");
-            playerHealth = playerHealth-3;
-            ShowHealthBar();
-            LoseScreen();
         }
     }
 
@@ -189,6 +204,13 @@ public class Spawner : MonoBehaviour {
             healthbar2.SetActive(false);
             healthbar3.SetActive(false);
         }
+    }
+
+    private IEnumerator iFrames()
+    {
+        yield return new WaitForSeconds(0.7f);
+
+        invuln = false;
     }
  
 }

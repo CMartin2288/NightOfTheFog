@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 6.1177697, g: 19.815775, b: 38.076176, a: 1}
+  m_IndirectSpecularColor: {r: 6.088683, g: 19.776464, b: 38.02425, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -785,8 +785,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: 515}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0.000017166, y: 491.272}
+  m_SizeDelta: {x: 279.5445, y: 97.456}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &529770474
 MonoBehaviour:
@@ -835,8 +835,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 64
+  m_fontSizeBase: 64
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2952,6 +2952,8 @@ GameObject:
   - component: {fileID: 1260793639}
   - component: {fileID: 1260793638}
   - component: {fileID: 1260793637}
+  - component: {fileID: 1260793643}
+  - component: {fileID: 1260793644}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2974,6 +2976,7 @@ MonoBehaviour:
   sens: 500
   speed: 10
   orientation: {fileID: 1807554240}
+  walk: {fileID: 1260793643}
 --- !u!54 &1260793638
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3092,6 +3095,133 @@ Transform:
   - {fileID: 1830537520}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1260793643
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260793636}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2a4dcf758f2e15b4fbdaaf04d2f8bd47, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1260793644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260793636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d126c2bd327160c42931edcc1ad4f5f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Stalker: {fileID: 1737135728005604374, guid: f7da453e7cdb4db4c871191cf502a067, type: 3}
+  pumpking: {fileID: 4456772372374077226, guid: 666bec1b516656c43810d1e5b80c5d92, type: 3}
+  Shadev2: {fileID: 3846199247696034674, guid: c56a31be57cc0114d9dbb30ed9bc83f1, type: 3}
+  fieldsword: {fileID: 3081295474919605594, guid: 6e342eb79d3daba45929143a2343add3, type: 3}
+  SaveInfo: {fileID: 1106859186}
+  startSpawnTime: 5
+  spawnTime: 10
+  swordSpawn0: {x: -110.72, y: -2, z: 104.97}
+  swordSpawn1: {x: 35.54, y: 14.3, z: 90.26}
+  swordSpawn2: {x: -34.95, y: 0.01, z: -47.64}
+  swordSpawn3: {x: 3.31, y: 8, z: -180.6}
+  swordSpawn4: {x: 93.18, y: 0, z: 57.52}
+  playerHealth: 3
+  healthbar1: {fileID: 0}
+  healthbar2: {fileID: 0}
+  healthbar3: {fileID: 0}
+  playerSound: {fileID: 1260793643}
+  hurt: {fileID: 8300000, guid: fe48d56b756b4b74ca1303b678c40425, type: 3}
+  invuln: 0
 --- !u!1 &1336028569
 GameObject:
   m_ObjectHideFlags: 0
@@ -4107,8 +4237,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1807554240}
-  - component: {fileID: 1807554241}
-  - component: {fileID: 1807554242}
   m_Layer: 3
   m_Name: Orientation
   m_TagString: Untagged
@@ -4131,57 +4259,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1260793642}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1807554241
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1807554239}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1807554242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1807554239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d126c2bd327160c42931edcc1ad4f5f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Stalker: {fileID: 1737135728005604374, guid: f7da453e7cdb4db4c871191cf502a067, type: 3}
-  pumpking: {fileID: 4456772372374077226, guid: 666bec1b516656c43810d1e5b80c5d92, type: 3}
-  Shadev2: {fileID: 3846199247696034674, guid: c56a31be57cc0114d9dbb30ed9bc83f1, type: 3}
-  fieldsword: {fileID: 3081295474919605594, guid: 6e342eb79d3daba45929143a2343add3, type: 3}
-  SaveInfo: {fileID: 1106859186}
-  startSpawnTime: 5
-  spawnTime: 10
-  swordSpawn0: {x: -110.72, y: -2, z: 104.97}
-  swordSpawn1: {x: 35.54, y: 14.3, z: 90.26}
-  swordSpawn2: {x: -34.95, y: 0.01, z: -47.64}
-  swordSpawn3: {x: 3.31, y: 8, z: -180.6}
-  swordSpawn4: {x: 93.18, y: 0, z: 57.52}
-  playerHealth: 3
-  healthbar1: {fileID: 0}
-  healthbar2: {fileID: 0}
-  healthbar3: {fileID: 0}
 --- !u!1 &1817895165
 GameObject:
   m_ObjectHideFlags: 0

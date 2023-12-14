@@ -12,13 +12,20 @@ public class Attack : MonoBehaviour
     GameObject shadehealthbar2;
     GameObject shadehealthbar3;
 
+    Collider hitbox;
+
     Animator animator;
 
     Animator enemyanimator;
 
+    public AudioSource audioSource;
+    public AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
+        hitbox = GetComponent<Collider>();
+
         playerWeapon = GameObject.FindWithTag("HoldWeap");
         //attaches sword animator
         animator = gameObject.GetComponent<Animator>();
@@ -27,14 +34,17 @@ public class Attack : MonoBehaviour
         shadehealthbar2 = GameObject.FindWithTag("Shade 2");
         shadehealthbar3 = GameObject.FindWithTag("Shade 3");
         ShowShadeHealthBar();
+
+        DisableHitbox();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1)) { // right-click
+        if (Input.GetMouseButtonDown(0)) { // left click
             // Debug.Log("Pressed right-click.");
             animator.SetTrigger("Attack");
+            hitbox.enabled = true;
         }
 
     }
@@ -54,15 +64,18 @@ public class Attack : MonoBehaviour
         if (enemy.CompareTag("Pumpking")) {
             // Debug.Log("hit Pumpking"); 
             enemyanimator = enemy.transform.GetChild(0).gameObject.GetComponent<Animator>();
-            bool test = (enemyanimator != null);
+            //bool test = (enemyanimator != null);
             // True = found enemy, false = null
             // Debug.Log(test); 
-            enemyanimator.ResetTrigger("Attack");
-            enemyanimator.SetTrigger("Dead");
+            //enemyanimator.ResetTrigger("Attack");
+            //enemyanimator.SetTrigger("Dead");
+            Destroy(enemy);
         }
 
         //sword hits shade enemy
         else if (enemy.CompareTag("Shade")) {
+            audioSource = enemy.transform.GetChild(0).gameObject.GetComponent<AudioSource>();
+            
             Debug.Log("if shade enemy");
             //removes health
             shadehealth--;
@@ -72,6 +85,8 @@ public class Attack : MonoBehaviour
                 Debug.Log("destroyed");
                 WinScreen();
             }
+
+            audioSource.PlayOneShot(audioClip);
         }
     }
 
@@ -100,5 +115,10 @@ public class Attack : MonoBehaviour
 
     private void WinScreen(){
         SceneManager.LoadSceneAsync("WinScreen");
+    }
+
+    public void DisableHitbox()
+    {
+        hitbox.enabled = false;
     }
 }
