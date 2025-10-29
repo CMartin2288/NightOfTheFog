@@ -28,7 +28,7 @@ public class EnemyMove : MonoBehaviour
         this.direction = (playMinusEnemy).normalized;
             
         var velocity = this.direction*this.speed;
-        this.rb.velocity = new Vector3(velocity.x, rb.velocity.y, velocity.z);
+        this.rb.linearVelocity = new Vector3(velocity.x, rb.linearVelocity.y, velocity.z);
         this.transform.LookAt(Player);
 
         if (gameObject.tag != "Pumpking")

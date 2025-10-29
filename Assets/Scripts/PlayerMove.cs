@@ -57,12 +57,12 @@ public class PlayerMove : MonoBehaviour
         move = orientation.forward*vert + orientation.right*hori;
         if(move.magnitude > 1) move = move.normalized;
         move = move * speed;
-        move.y = rb.velocity.y;
+        move.y = rb.linearVelocity.y;
 
         if(move.magnitude > 0.2) walk.UnPause();
         else walk.Pause();
 
-        rb.velocity = move;
+        rb.linearVelocity = move;
     }
 
     void FixedUpdate()
